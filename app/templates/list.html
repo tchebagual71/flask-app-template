@@ -1,61 +1,31 @@
 {% extends "base.html" %}
-{% import "bootstrap_wtf.html" as wtf %}
 
-{%block title%}Lista!{%endblock%}
+{% block title %}List{% endblock %}
 
-{%block main_content%}
-
-	<h1>Listagem</h1>
-	
-	<div class="row">
-		<div class="span12">
-
-			Listagem...
-
-			<table class="table">
-				<tr>
-					<th>Coluna 1</th>
-					<th>Coluna 2</th>
-					<th>Coluna 3</th>
-					<th>Coluna 4</th>
-					<th>Coluna 5</th>
-					<th>Coluna 6</th>
-				</tr>
-				<tr>
-					<td>valor 1</td>
-					<td>valor 2</td>
-					<td>valor 3</td>
-					<td>valor 4</td>
-					<td>valor 5</td>
-					<td>valor 6</td>
-				</tr>
-				<tr>
-					<td>valor 1</td>
-					<td>valor 2</td>
-					<td>valor 3</td>
-					<td>valor 4</td>
-					<td>valor 5</td>
-					<td>valor 6</td>
-				</tr>
-				<tr>
-					<td>valor 1</td>
-					<td>valor 2</td>
-					<td>valor 3</td>
-					<td>valor 4</td>
-					<td>valor 5</td>
-					<td>valor 6</td>
-				</tr>
-				<tr>
-					<td>valor 1</td>
-					<td>valor 2</td>
-					<td>valor 3</td>
-					<td>valor 4</td>
-					<td>valor 5</td>
-					<td>valor 6</td>
-				</tr>
+{% block content %}
+    <h1 class="text-center my-4">Data Listing</h1>
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+			<table class="table table-hover mt-3">
+				<thead class="table-dark">
+					<tr>
+						<!-- Table Headers -->
+						{% for i in range(1, 7) %}
+							<th scope="col">Column {{ i }}</th>
+						{% endfor %}
+					</tr>
+				</thead>
+				<tbody>
+					<!-- Table Rows -->
+					{% for i in range(1, 6) %}
+						<tr>
+							{% for j in range(1, 7) %}
+								<td>Value {{ j }}</td>
+							{% endfor %}
+						</tr>
+					{% endfor %}
+				</tbody>
 			</table>
-
-		</div>
-	</div>
-
-{%endblock%}
+        </table>
+    </div>
+{% endblock %}
